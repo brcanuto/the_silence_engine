@@ -1,5 +1,5 @@
-from the_silence_engine.puzzles.resonance_trace import ResonanceTrace
-from the_silence_engine.puzzles.shard_corruption import ShardCorruption
+from the_silence_engine_backend.puzzles.resonance_trace import ResonanceTrace
+from the_silence_engine_backend.puzzles.shard_corruption import ShardCorruption
 
 
 def run_incident(puzzle):
