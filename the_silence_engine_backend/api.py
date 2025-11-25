@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Dict, Any
 
-from .puzzles.resonance_trace import ResonanceTrace
-from .puzzles.shard_corruption import ShardCorruption
+from puzzles.resonance_trace import ResonanceTrace
+from puzzles.shard_corruption import ShardCorruption
 
 
 app = FastAPI(title="The Silence Engine API")
