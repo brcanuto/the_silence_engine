@@ -90,6 +90,41 @@ INCIDENTS: Dict[int, Dict[str, Any]] = {
         ],
         "correct_choice": "B",
     },
+    3: {
+    "id": "echo_scaling",
+    "title": "Echo-Chamber Load — Strain on the Amplifiers",
+    "description": (
+        "Resonance traffic spikes as a new broadcast sweeps the outer districts. "
+        "Echo-chamber amplifiers are nearing their limits, and failures begin "
+        "to ripple through the lattice."
+    ),
+    "lines": [
+        "metric: echo_chamber.cpu = 91%",
+        "metric: echo_chamber.latency_ms = 780",
+        "metric: core_tower.cpu = 54%",
+        "metric: archive_node.io_wait = 12%",
+        "log: echo-chamber-2: dropped resonance packets; queue overflow",
+    ],
+    "choices": [
+        {
+            "key": "A",
+            "label": "Increase core tower depth; redirect more load to the central pillar.",
+        },
+        {
+            "key": "B",
+            "label": "Add two more echo-chambers to the outer ring and rebalance traffic.",
+        },
+        {
+            "key": "C",
+            "label": "Expand archive node capacity to cache more dormant shards.",
+        },
+        {
+            "key": "D",
+            "label": "Purge low-priority shards from the archive.",
+        },
+    ],
+    "correct_choice": "B",
+},
 }
 
 
@@ -147,6 +182,11 @@ def answer_incident(index: int, body: AnswerRequest):
                 "Correct. Negative durations signify temporal fractures "
                 "and must be isolated."
             )
+        elif index == 3:
+            message = (
+                "Correct. Scaling out the outer echo-chambers relieves load "
+                "where the failures are actually happening."
+            )
         else:
             message = "Correct."
     else:
@@ -158,6 +198,11 @@ def answer_incident(index: int, body: AnswerRequest):
         elif index == 2:
             message = (
                 "Incorrect. The corrupted shards are those with negative durations."
+            )
+        elif index == 3:
+            message = (
+                "Incorrect. The metrics point to overload in the echo-chambers, "
+                "not the core tower or archive nodes."
             )
         else:
             message = "Incorrect."
