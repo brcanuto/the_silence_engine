@@ -1,42 +1,140 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #050509;
+  color: #f5f5f5;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1rem;
 }
 
 .card {
-  padding: 2em;
+  max-width: 760px;
+  width: 100%;
+  background: #111018;
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
 }
 
-.read-the-docs {
-  color: #888;
+.title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+  color: #a3a3b5;
+}
+
+.body-text {
+  margin-top: 0.75rem;
+  color: #d6d6e3;
+}
+
+.incident-title {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.trace-block {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #05060a;
+  color: #8df7b0;
+  border-radius: 8px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+/* Buttons */
+
+.primary-btn,
+.secondary-btn {
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.primary-btn {
+  margin-top: 1.5rem;
+  background: #4b8cf5;
+  color: white;
+}
+
+.secondary-btn {
+  margin-top: 0.75rem;
+  background: #222432;
+  color: #f5f5f5;
+}
+
+/* Choices */
+
+.choices-section {
+  margin-top: 1.5rem;
+}
+
+.choices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.choice-btn {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2d2f3a;
+  background: #171824;
+  color: #f5f5f5;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.choice-key {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.choice-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Result banner */
+
+.result-banner {
+  margin-top: 1.75rem;
+  padding: 1rem 1.1rem;
+  border-radius: 10px;
+}
+
+.result-correct {
+  background: #17432a;
+}
+
+.result-incorrect {
+  background: #4a2020;
+}
+
+.result-text {
+  margin: 0;
 }
